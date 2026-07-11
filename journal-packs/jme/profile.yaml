@@ -1,0 +1,25 @@
+id: jme
+name: Journal of Medical Ethics
+publisher: BMJ
+scope_summary: Ethical reflection and conduct in scientific research and medical practice across the field of medical ethics.
+article_types:
+  - medical ethics
+  - clinical ethics
+  - research ethics
+  - normative policy analysis
+fit_signals:
+  - clinical ethics
+  - bedside
+  - ethics committee
+  - resource allocation
+  - consent
+  - professional duty
+  - research ethics
+  - medical practice
+mismatch_signals:
+  - pure metaphysics
+  - literary interpretation
+  - technical validation
+official_urls:
+  - https://jme.bmj.com/pages/about
+checked_at: 2026-07-11

@@ -1,0 +1,33 @@
+cases:
+  - id: route-mhcp-001
+    title: Illness and the moral texture of care
+    abstract: A phenomenological account of illness, suffering, well-being, patient subjectivity, care, and clinical judgment.
+    expected_primary: mhcp
+    reason_markers:
+      - phenomenology
+      - patient subjectivity
+      - care
+  - id: route-jme-001
+    title: Duties in bedside allocation
+    abstract: Clinical ethics at the bedside requires ethics committee guidance on resource allocation, consent, professional duty, and medical practice.
+    expected_primary: jme
+    reason_markers:
+      - clinical ethics
+      - ethics committee
+      - resource allocation
+  - id: route-bioethics-001
+    title: Artificial intelligence and global data justice
+    abstract: Artificial intelligence creates data justice, law, public health, genomics, global health, and policy problems for bioethics.
+    expected_primary: bioethics
+    reason_markers:
+      - artificial intelligence
+      - data justice
+      - policy
+  - id: route-jmp-001
+    title: What are health and disease?
+    abstract: A conceptual analysis develops a metaphysics of health and disease, personhood, death, ontology, and philosophy of medicine.
+    expected_primary: jmp
+    reason_markers:
+      - conceptual analysis
+      - metaphysics
+      - health and disease

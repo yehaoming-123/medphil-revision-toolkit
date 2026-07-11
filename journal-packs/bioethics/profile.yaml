@@ -1,0 +1,27 @@
+id: bioethics
+name: Bioethics
+publisher: Wiley
+scope_summary: Ethical, legal, and policy problems in biomedicine and the life sciences, including their underlying concepts, principles, and theories.
+article_types:
+  - normative bioethics
+  - applied ethics
+  - policy ethics
+  - empirical bioethics
+fit_signals:
+  - bioethics
+  - artificial intelligence
+  - data justice
+  - policy
+  - law
+  - public health
+  - genomics
+  - stem cell
+  - global health
+mismatch_signals:
+  - pure metaphysics
+  - literary analysis
+  - technical validation
+official_urls:
+  - https://onlinelibrary.wiley.com/page/journal/14678519/homepage/productinformation.html
+  - https://onlinelibrary.wiley.com/page/journal/14678519/homepage/forauthors.html
+checked_at: 2026-07-11

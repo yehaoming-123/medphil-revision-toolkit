@@ -1,0 +1,25 @@
+id: jmp
+name: The Journal of Medicine and Philosophy
+publisher: Oxford University Press
+scope_summary: International scholarship in bioethics and philosophy of medicine, including foundational conceptual, metaphysical, and normative questions.
+article_types:
+  - philosophy of medicine
+  - conceptual analysis
+  - metaphysics of medicine
+  - foundational bioethics
+fit_signals:
+  - metaphysics
+  - conceptual analysis
+  - health and disease
+  - personhood
+  - death
+  - mind
+  - ontology
+  - philosophy of medicine
+mismatch_signals:
+  - policy implementation
+  - ethics committee
+  - empirical survey
+official_urls:
+  - https://academic.oup.com/jmp
+checked_at: 2026-07-11

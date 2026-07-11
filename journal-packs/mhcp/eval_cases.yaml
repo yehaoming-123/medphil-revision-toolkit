@@ -1,0 +1,7 @@
+cases:
+  - id: mhcp-positive-001
+    text: Chronic illness, patient subjectivity, care, and clinical judgment require a phenomenological analysis.
+    expected: positive
+  - id: mhcp-negative-001
+    text: This randomized trial reports algorithm performance without an ethical or philosophical argument.
+    expected: negative

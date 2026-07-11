@@ -1,0 +1,4 @@
+interface:
+  display_name: "Journal Router"
+  short_description: "Compare fit across four ethics journals"
+  default_prompt: "Use $journal-router to compare this manuscript across MHCP, JME, Bioethics, and JMP."

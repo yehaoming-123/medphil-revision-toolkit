@@ -1,0 +1,7 @@
+cases:
+  - id: jme-positive-001
+    text: A clinical ethics committee must guide bedside resource allocation and consent when professional duties conflict.
+    expected: positive
+  - id: jme-negative-001
+    text: This paper offers pure metaphysics without implications for research or medical practice.
+    expected: negative

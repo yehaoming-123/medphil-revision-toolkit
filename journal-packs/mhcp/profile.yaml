@@ -1,0 +1,25 @@
+id: mhcp
+name: Medicine, Health Care and Philosophy
+publisher: Springer Nature
+scope_summary: Interdisciplinary bioethics and philosophy of medicine and health care, centered on health, illness, disease, death, well-being, life, and health-care practice.
+article_types:
+  - conceptual
+  - normative
+  - philosophy of medicine
+  - medical humanities
+fit_signals:
+  - care
+  - phenomenology
+  - illness
+  - suffering
+  - well-being
+  - medical humanities
+  - patient subjectivity
+  - clinical judgment
+mismatch_signals:
+  - randomized trial
+  - technical validation
+  - algorithm performance
+official_urls:
+  - https://link.springer.com/journal/11019/aims-and-scope
+checked_at: 2026-07-11

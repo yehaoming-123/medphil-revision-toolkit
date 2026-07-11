@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+
+# Never commit user manuscripts or generated revisions.
+input/*
+output/*

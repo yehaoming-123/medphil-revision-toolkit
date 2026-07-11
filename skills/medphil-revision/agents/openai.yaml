@@ -1,0 +1,4 @@
+interface:
+  display_name: "MedPhil Revision"
+  short_description: "Revise medical philosophy manuscripts safely"
+  default_prompt: "Use $medphil-revision to revise this manuscript for its confirmed target journal."

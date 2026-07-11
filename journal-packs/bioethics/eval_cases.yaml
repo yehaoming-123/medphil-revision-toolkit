@@ -1,0 +1,7 @@
+cases:
+  - id: bioethics-positive-001
+    text: Artificial intelligence, data justice, law, and global health policy raise a substantive bioethics problem.
+    expected: positive
+  - id: bioethics-negative-001
+    text: This technical validation reports model accuracy without ethical analysis.
+    expected: negative

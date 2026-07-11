@@ -1,0 +1,7 @@
+cases:
+  - id: jmp-positive-001
+    text: A conceptual analysis of health and disease develops a metaphysics of personhood, death, and medical ontology.
+    expected: positive
+  - id: jmp-negative-001
+    text: An empirical survey reports local ethics committee implementation without philosophical argument.
+    expected: negative

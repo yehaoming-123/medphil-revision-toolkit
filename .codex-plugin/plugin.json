@@ -1,0 +1,30 @@
+{
+  "name": "medphil-revision-toolkit",
+  "version": "0.1.0-alpha.1",
+  "description": "Journal routing and safe revision workflows for philosophy of medicine and bioethics manuscripts.",
+  "author": {
+    "name": "MedPhil Revision Toolkit Contributors"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "bioethics",
+    "medical-ethics",
+    "philosophy-of-medicine",
+    "academic-editing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MedPhil Revision Toolkit",
+    "shortDescription": "Route and revise medical philosophy manuscripts",
+    "longDescription": "Compare journal fit and safely revise philosophy of medicine and bioethics manuscripts with source-aware journal adapters.",
+    "developerName": "MedPhil Revision Toolkit Contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Compare this manuscript across MHCP, JME, Bioethics, and JMP."
+    ]
+  }
+}
