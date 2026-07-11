@@ -5,7 +5,7 @@
 - 项目编号：`Project_038`
 - 项目目录：`Project_038_medphil_revision_toolkit`
 - 创建日期：`2026-07-11`
-- 当前状态：`阶段 2 已完成`
+- 当前状态：`v0.1.0-rc.1 发布候选`
 
 ## 项目目标
 
@@ -47,13 +47,22 @@
 - 生成不暴露本机绝对路径的确定性 Markdown 修改日志。
 - 提供两页合成医学哲学论文、固定工作副本和端到端回归评测。
 
+## 阶段 3 能力
+
+- 把语义修稿判断记录为可审阅的 JSON 修订规范，而不是让模型直接改写 Word 底层结构。
+- 为每个正文段落生成稳定索引、文本哈希、节标题、引用与复杂格式保护状态。
+- 仅对原文精确匹配且安全的普通段落应用修订；任何预检失败都不生成部分结果。
+- 将高风险或可能改变作者立场的修改留在作者确认清单，不静默落稿。
+- 生成干净修订稿、中文修改日志、四刊路由报告、期刊适配报告和作者确认清单。
+- 提供 Windows 兼容的 DOCX QA 渲染器，使用标准 `file:///` 用户目录 URI，避免外部渲染器的误报。
+
 ## 安装开发依赖
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-项目目前作为本地插件源进行开发。公共 GitHub 仓库和插件目录发布将在完成 DOCX 阶段及发布前评测后配置。
+项目已达到本地 v0.1 发布候选状态。创建公共 GitHub 仓库、远程推送和插件目录发布仍需单独授权。
 
 ## 验证
 
@@ -71,6 +80,16 @@ python scripts/validate_journal_pack.py journal-packs/jmp
 python scripts/inspect_docx.py input/manuscript.docx --strict
 ```
 
+生成安全段落清单、校验并应用结构化修订规范：
+
+```powershell
+python scripts/build_revision_inventory.py input/manuscript.docx
+python scripts/validate_revision_spec.py revision_spec.json --source input/manuscript.docx
+python scripts/apply_revision_spec.py input/manuscript.docx output/revised_manuscript.docx revision_spec.json
+```
+
+`revision_spec.json` 必须符合 [`references/revision_spec_schema.json`](references/revision_spec_schema.json)。完整交付包由 `$medphil-revision` 按 [`references/report_contract.md`](references/report_contract.md) 生成。
+
 `--strict` 发现明显敏感标识时会失败。它只是一道确定性安全门，不是语义去标识化证明；真实稿件仍需作者确认已移除患者与个人身份信息。
 
 工作副本和受保护字段比较以 Python API 提供：
@@ -84,7 +103,24 @@ working = create_working_copy(source, "output/manuscript_working.docx")
 violations = compare_protected_fields(inspect_docx(source), inspect_docx(working))
 ```
 
-视觉回归使用 LibreOffice 将 DOCX 转为 PDF/PNG；渲染文件仅用于本地质量检查，不进入公开仓库。
+视觉回归使用 LibreOffice 和 Poppler 将 DOCX 转为 PDF/PNG；渲染文件仅用于本地质量检查，不进入公开仓库：
+
+```powershell
+python scripts/render_docx_qa.py output/revised_manuscript.docx output/rendered-pages
+```
+
+### 支持的自动修订
+
+- 非空、无引用、无字段、无超链接、无图形且字符格式一致的普通正文段落。
+- 段落索引与原文必须和当前 DOCX 清单精确一致。
+- 段落样式保留，原稿永不覆盖。
+
+### 默认拒绝的自动修订
+
+- 标题、参考文献、引文段落、表格内文字、脚注和批注。
+- 域代码、引用管理器对象、超链接、图片/绘图、混合字符格式段落。
+- 可能改变作者立场且尚未确认的高风险修改。
+- 加密、损坏、图片型正文或包含疑似身份信息的文件。
 
 ## 目录结构
 
@@ -112,6 +148,7 @@ Project_038_medphil_revision_toolkit/
 - [v0.1 设计稿](docs/superpowers/specs/2026-07-11-medphil-revision-toolkit-design.md)
 - [阶段 1 实施计划](docs/superpowers/plans/2026-07-11-medphil-foundation-implementation.md)
 - [阶段 2 实施计划](docs/superpowers/plans/2026-07-11-docx-safety-implementation.md)
+- [阶段 3 实施计划](docs/superpowers/plans/2026-07-11-end-to-end-revision-implementation.md)
 
 ## 数据安全
 
@@ -131,10 +168,13 @@ Project_038_medphil_revision_toolkit/
 - [x] 实现 DOCX 安全管线并通过 23 项自动化测试。
 - [x] 完成 LibreOffice 视觉回归；源稿与工作副本均为 2 页且逐页哈希一致。
 - [x] 完成阶段 2 统一提交。
+- [x] 完成端到端安全修订、五项交付物和 2 页修订稿视觉验收。
+- [x] 完成 v0.1 发布候选全量验证与统一提交。
 
 ## 已知限制
 
-- 阶段 2 只建立安全读取、复制与不变量校验；模型驱动的正文修订属于下一阶段。
+- v0.1 只自动修改结构简单且通过精确预检的普通正文段落；复杂段落失败关闭。
 - 最近文章语料画像尚未系统构建，现有 `editorial_profile.md` 仅包含明确标注的初步编辑推断。
 - 敏感标识门控只覆盖明确模式，不能替代作者的语义隐私审查。
-- 项目在独立 `feature/foundation` Git 分支中开发；每个完整阶段统一提交，不推送远程仓库。
+- 公共 GitHub 仓库、远程地址和插件市场发布尚未配置。
+- 项目在独立 `feature/foundation` Git 分支中开发；按既定选择保留该分支，不推送远程仓库。

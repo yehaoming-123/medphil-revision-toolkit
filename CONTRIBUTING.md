@@ -34,6 +34,14 @@ New behavior requires a failing test before implementation. Do not change expect
 
 Keep triggering conditions in YAML frontmatter and workflow instructions in the body. Preserve the evidence labels, author-confirmation gate, reference freeze, and prohibition on acceptance prediction.
 
+## Revision-engine changes
+
+- Update `references/revision_spec_schema.json` and its tests together when the contract changes.
+- Keep exact original-text matching and source SHA-256 validation mandatory.
+- Do not make citation-bearing, reference, field, hyperlink, drawing, table, or mixed-format paragraphs eligible merely to satisfy an evaluation.
+- Add a failing safety test before widening the editable paragraph classes.
+- Render any changed DOCX fixture page by page with `scripts/render_docx_qa.py` before submitting.
+
 ## Licensing
 
 By contributing, you agree that your contribution is licensed under Apache-2.0. External sources and journal content remain under their original rights.

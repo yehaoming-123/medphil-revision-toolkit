@@ -1,0 +1,30 @@
+{
+  "target_journal": "mhcp",
+  "source_sha256": "64ef0b733d939d886974622044e0405aa831665946813f3e6e3f1b8dbcf8052a",
+  "revisions": [
+    {
+      "paragraph_index": 2,
+      "original_text": "Clinical artificial intelligence can support judgment without replacing the responsibility to explain a recommendation to a patient.",
+      "revised_text": "Clinical artificial intelligence can support judgment, but responsibility for explaining recommendations to patients remains with clinicians.",
+      "reason": "States the responsibility claim more directly while preserving its scope.",
+      "risk_level": "low",
+      "author_confirmation": false
+    },
+    {
+      "paragraph_index": 7,
+      "original_text": "The distinction between prediction and judgment protects patient agency while clarifying professional accountability.",
+      "revised_text": "Distinguishing prediction from judgment helps protect patient agency and locate professional accountability in the clinical act of recommending care.",
+      "reason": "Connects the conceptual distinction to the relevant clinical act.",
+      "risk_level": "medium",
+      "author_confirmation": false
+    },
+    {
+      "paragraph_index": 12,
+      "original_text": "AI may inform a choice, but it cannot assume the clinician's relational duty.",
+      "revised_text": "AI may inform clinical choice, but it cannot assume the clinician's relational responsibility to justify and explain that choice.",
+      "reason": "Makes the concluding relational responsibility explicit.",
+      "risk_level": "medium",
+      "author_confirmation": false
+    }
+  ]
+}

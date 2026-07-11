@@ -33,6 +33,21 @@ class SkillContractTests(unittest.TestCase):
         ):
             self.assertIn(phrase, text)
 
+    def test_revision_skill_names_deterministic_orchestration(self):
+        text = self.read_skill("medphil-revision")
+        for phrase in (
+            "inspect_docx.py",
+            "build_revision_inventory.py",
+            "validate_revision_spec.py",
+            "apply_revision_spec.py",
+            "compare_protected_fields",
+            "build_delivery_bundle.py",
+            "fail closed",
+            "respond to the user in chinese",
+            "keep manuscript prose in english",
+        ):
+            self.assertIn(phrase, text)
+
     def test_router_covers_four_journals_and_evidence_layers(self):
         text = self.read_skill("journal-router")
         for phrase in (

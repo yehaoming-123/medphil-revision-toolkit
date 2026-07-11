@@ -1,4 +1,4 @@
 interface:
   display_name: "MedPhil Revision"
   short_description: "Revise medical philosophy manuscripts safely"
-  default_prompt: "Use $medphil-revision to revise this manuscript for its confirmed target journal."
+  default_prompt: "Use $medphil-revision to safely revise this English manuscript for its confirmed target journal, interact with me in Chinese, and produce the five-file delivery bundle."

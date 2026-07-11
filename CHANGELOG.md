@@ -2,6 +2,29 @@
 
 All notable project changes are recorded here.
 
+## 0.1.0-rc.1 - 2026-07-11
+
+### Added
+
+- Machine-checkable revision-specification schema and validator.
+- Safe paragraph inventory with citation, reference, field, hyperlink, drawing, and mixed-format protection.
+- Exact-match DOCX revision engine with fail-closed preflight and author-confirmation routing.
+- Five-file delivery-bundle builder with Chinese reports and preserved evidence labels.
+- Synthetic MHCP end-to-end revision fixture and expected reports.
+- Windows-safe DOCX QA renderer using standards-compliant file URIs.
+
+### Verified
+
+- Thirty-nine automated tests pass.
+- Synthetic source hash remains unchanged while three eligible paragraphs are revised.
+- Citation-bearing introduction paragraphs and the reference list remain frozen.
+- The revised DOCX renders to two visually valid pages.
+
+### Limitations
+
+- v0.1 edits only simple eligible paragraphs and does not promise lossless mutation of complex Word objects.
+- Public repository publication and marketplace distribution are not yet configured.
+
 ## 0.1.0-alpha.2 - 2026-07-11
 
 ### Added

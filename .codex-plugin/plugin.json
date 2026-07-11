@@ -1,6 +1,6 @@
 {
   "name": "medphil-revision-toolkit",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-rc.1",
   "description": "Journal routing and safe revision workflows for philosophy of medicine and bioethics manuscripts.",
   "author": {
     "name": "MedPhil Revision Toolkit Contributors"

@@ -6,7 +6,7 @@ from scripts.inspect_docx import detect_sensitive_markers
 class SensitiveGateTests(unittest.TestCase):
     def test_obvious_identifier_shapes_are_flagged(self):
         cases = {
-            "author@example.org": "email",
+            "author@sample.test": "email",
             "+86 138-1234-5678": "phone",
             "11010519491231002X": "national_id",
             "MRN: ICU-88421": "medical_record_id",
