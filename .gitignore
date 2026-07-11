@@ -5,3 +5,7 @@ __pycache__/
 # Never commit user manuscripts or generated revisions.
 input/*
 output/*
+
+# Local visual-QA artifacts and installer diagnostics.
+evals/rendered/
+docs/libreoffice-repair.log

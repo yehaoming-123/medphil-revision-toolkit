@@ -1,4 +1,4 @@
-# MedPhil Revision Toolkit Foundation Implementation Plan
+﻿# MedPhil Revision Toolkit Foundation Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -12,13 +12,13 @@
 
 ## Execution context
 
-- Project root: `D:\coedx workspace\Project_038_medphil_revision_toolkit`
-- Python: `C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`
-- Git: `C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe`
+- Project root: `<repo-root>`
+- Python: `python`
+- Git: `git`
 - Full test command:
 
 ```powershell
-$PY='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$PY='python'
 & $PY -m unittest discover -s evals/tests -v
 ```
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 Run:
 
 ```powershell
-$PY='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$PY='python'
 & $PY -m unittest evals.tests.test_plugin_structure -v
 ```
 
@@ -137,8 +137,8 @@ python-docx>=1.2,<2.0
 Initialize both skill folders before replacing the generated placeholders:
 
 ```powershell
-$PY='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-$INIT='C:\Users\18799\.codex\skills\.system\skill-creator\scripts\init_skill.py'
+$PY='python'
+$INIT='<codex-home>\skills\.system\skill-creator\scripts\init_skill.py'
 & $PY $INIT medphil-revision --path skills --interface 'display_name=MedPhil Revision' --interface 'short_description=Revise medical philosophy manuscripts safely' --interface 'default_prompt=Use $medphil-revision to revise this manuscript for its confirmed target journal.'
 & $PY $INIT journal-router --path skills --interface 'display_name=Journal Router' --interface 'short_description=Compare fit across four ethics journals' --interface 'default_prompt=Use $journal-router to compare this manuscript across MHCP, JME, Bioethics, and JMP.'
 ```
@@ -178,7 +178,7 @@ Expected: 2 tests pass.
 - [ ] **Step 5: Commit only Task 1 files**
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- '.codex-plugin/plugin.json' 'requirements.txt' 'skills/medphil-revision' 'skills/journal-router' 'evals/tests/test_plugin_structure.py'
 & $GIT commit -m 'feat: scaffold medphil revision plugin'
 ```
@@ -266,7 +266,7 @@ if __name__ == "__main__":
 - [ ] **Step 2: Install the declared dependencies and verify RED**
 
 ```powershell
-$PY='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$PY='python'
 & $PY -m pip install -r requirements.txt
 & $PY -m unittest evals.tests.test_journal_pack_validator -v
 ```
@@ -376,7 +376,7 @@ Expected: 4 tests pass.
 - [ ] **Step 5: Commit Task 2 files**
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- 'scripts/validate_journal_pack.py' 'references/journal_pack_schema.md' 'evals/tests/test_journal_pack_validator.py' 'requirements.txt'
 & $GIT commit -m 'feat: validate journal pack provenance'
 ```
@@ -453,7 +453,7 @@ Expected: 7 tests pass: 2 structure, 4 validator, 1 repository-pack test.
 - [ ] **Step 5: Commit the journal packs**
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- 'journal-packs' 'evals/tests/test_repository_journal_packs.py'
 & $GIT commit -m 'feat: add four journal adapter packs'
 ```
@@ -538,7 +538,7 @@ Expected: 8 tests pass.
 - [ ] **Step 5: Commit routing baseline and cases**
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- 'scripts/route_journal.py' 'evals/fixtures/routing_cases.yaml' 'evals/tests/test_routing_baseline.py' 'journal-packs'
 & $GIT commit -m 'test: add four-journal routing baseline'
 ```
@@ -573,7 +573,7 @@ Expected: all structure, validator, pack, routing, and skill-contract tests pass
 - [ ] **Step 5: Commit workflow skills and policies**
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- 'skills' 'references/source_policy.md' 'references/editorial_safety.md' 'evals/tests/test_skill_contracts.py'
 & $GIT commit -m 'feat: define safe journal revision workflows'
 ```
@@ -586,7 +586,7 @@ $GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\na
 - Create: `CHANGELOG.md`
 - Modify: `README.md`
 - Modify: `project_log.md`
-- Modify: `D:\coedx workspace\全局控制台.md`
+- Modify: `<workspace-root>\全局控制台.md`
 
 - [ ] **Step 1: Add Apache-2.0 and contribution rules**
 
@@ -599,14 +599,14 @@ Create `CHANGELOG.md` with an `0.1.0-alpha.1` entry listing plugin skeleton, fou
 - [ ] **Step 3: Run fresh verification**
 
 ```powershell
-$PY='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$PY='python'
 & $PY -m unittest discover -s evals/tests -v
 & $PY scripts/validate_journal_pack.py journal-packs/mhcp
 & $PY scripts/validate_journal_pack.py journal-packs/jme
 & $PY scripts/validate_journal_pack.py journal-packs/bioethics
 & $PY scripts/validate_journal_pack.py journal-packs/jmp
-$PLUGIN_VALIDATOR='C:\Users\18799\.codex\skills\.system\plugin-creator\scripts\validate_plugin.py'
-$SKILL_VALIDATOR='C:\Users\18799\.codex\skills\.system\skill-creator\scripts\quick_validate.py'
+$PLUGIN_VALIDATOR='<codex-home>\skills\.system\plugin-creator\scripts\validate_plugin.py'
+$SKILL_VALIDATOR='<codex-home>\skills\.system\skill-creator\scripts\quick_validate.py'
 & $PY $PLUGIN_VALIDATOR .
 & $PY $SKILL_VALIDATOR skills/medphil-revision
 & $PY $SKILL_VALIDATOR skills/journal-router
@@ -628,7 +628,7 @@ Expected: no placeholders; prohibited claims appear only in explicit prohibition
 Set Project_038 status to `阶段 1 已完成` only after the verification output is fresh. Record exact test count and remaining Phase 2 DOCX work in `project_log.md` and `全局控制台.md`.
 
 ```powershell
-$GIT='C:\Users\18799\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe'
+$GIT='git'
 & $GIT add -- 'Project_038_medphil_revision_toolkit' '全局控制台.md'
 & $GIT commit -m 'docs: complete medphil toolkit foundation'
 ```
