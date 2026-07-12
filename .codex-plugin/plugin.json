@@ -3,8 +3,11 @@
   "version": "0.1.0-rc.1",
   "description": "Journal routing and safe revision workflows for philosophy of medicine and bioethics manuscripts.",
   "author": {
-    "name": "MedPhil Revision Toolkit Contributors"
+    "name": "MedPhil Revision Toolkit Contributors",
+    "url": "https://github.com/yehaoming-123"
   },
+  "homepage": "https://github.com/yehaoming-123/medphil-revision-toolkit",
+  "repository": "https://github.com/yehaoming-123/medphil-revision-toolkit",
   "license": "Apache-2.0",
   "keywords": [
     "bioethics",
@@ -18,6 +21,7 @@
     "shortDescription": "Route and revise medical philosophy manuscripts",
     "longDescription": "Compare journal fit and safely revise philosophy of medicine and bioethics manuscripts with source-aware journal adapters.",
     "developerName": "MedPhil Revision Toolkit Contributors",
+    "websiteURL": "https://github.com/yehaoming-123/medphil-revision-toolkit",
     "category": "Productivity",
     "capabilities": [
       "Read",
