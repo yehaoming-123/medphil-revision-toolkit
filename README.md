@@ -62,7 +62,7 @@
 python -m pip install -r requirements.txt
 ```
 
-项目已达到本地 v0.1 发布候选状态。创建公共 GitHub 仓库、远程推送和插件目录发布仍需单独授权。
+项目已公开发布至 GitHub，当前默认分支为 `feature/foundation`。Codex 插件市场发布仍需单独配置。
 
 ## 验证
 
@@ -176,5 +176,5 @@ Project_038_medphil_revision_toolkit/
 - v0.1 只自动修改结构简单且通过精确预检的普通正文段落；复杂段落失败关闭。
 - 最近文章语料画像尚未系统构建，现有 `editorial_profile.md` 仅包含明确标注的初步编辑推断。
 - 敏感标识门控只覆盖明确模式，不能替代作者的语义隐私审查。
-- 公共 GitHub 仓库、远程地址和插件市场发布尚未配置。
-- 项目在独立 `feature/foundation` Git 分支中开发；按既定选择保留该分支，不推送远程仓库。
+- Codex 插件市场发布尚未配置。
+- 项目在 `feature/foundation` 分支中维护；该分支已同步到公开 GitHub 仓库。
